@@ -11,12 +11,12 @@
       font-family: 'Segoe UI', sans-serif;
     }
     .hero {
-      background: url('hero-bg.jpg') center/cover no-repeat;
+      background: url('assets/img/hero.png') center/cover no-repeat;
       min-height: 100vh;
       display: flex;
       align-items: center;
       padding: 3rem;
-      color: white;
+      color: #000000;
     }
     .marketing-section, .marketing-section-2 {
       background: url('marketing-bg.jpg') center/cover no-repeat;
@@ -41,9 +41,11 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-bold bg-white">
     <div class="container">
-      <a class="navbar-brand" href="#">Bkeefi Cafe</a>
+		<a class="navbar-brand" href="#">
+			<img src="assets/img/cafe-logo.png" alt="Bkeefi Cafe Logo" style="width: 150px;">
+		  </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -76,9 +78,7 @@
           <p>bkeefi cafe ليس مجرد مقهى... بل أسلوب حياة شبابي وعائلي بطابع رياضي مثير ينبض بالحيوية.</p>
           <a href="#menu" class="btn btn-light">Explore Menu</a>
         </div>
-        <div class="col-md-6">
-          <img src="hero-img.png" alt="Coffee and Sports" class="img-fluid">
-        </div>
+        
       </div>
     </div>
   </section>
@@ -92,7 +92,7 @@
           <p>بكيفي كافيه يقدم المشروبات و المخبوزات الصحية و الرياضية</p>
         </div>
         <div class="col-md-6">
-          <img src="about.jpg" alt="About Bkeefi" class="img-fluid">
+          <img src="assets/img/about us.png" alt="About Bkeefi" class="img-fluid">
         </div>
       </div>
     </div>
@@ -184,7 +184,7 @@
   <!-- Footer -->
   <footer class="mt-5">
     <div class="container text-center">
-      <img src="logo.png" alt="Bkeefi Logo" style="width: 100px;">
+      <img src="assets/img/cafe-logo.png" alt="Bkeefi Logo" style="width: 100px;">
       <p>Amman, Jordan</p>
       <div class="social-icons">
         <a href="#"><i class="bi bi-facebook"></i></a>
