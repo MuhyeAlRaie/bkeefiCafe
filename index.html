@@ -1,405 +1,396 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bkeefi Cafe</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Dubai:wght@400;700&display=swap" rel="stylesheet">
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bkeefi - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Dubai Font (Local Hosting Example) -->
   <style>
-   body {
-  font-family: 'Dubai', sans-serif;
+
+
+    body {
+      font-family: 'Dubai', sans-serif;
+    }
+
+    .hero-section {
+  background-image: url('assets/img/hero.png'); /* Replace with actual path */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  clip-path: ellipse(130% 100% at 70% 0%);
+  padding: 60px 20px;
+  overflow: hidden;
+  position: relative;
 }
-    .hero {
-      background: url('assets/img/hero.png') center/cover no-repeat;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 3rem;
-      color: #000000;
-    }
-    .hero .btn {
-background-color: #ff0000;
-color: white;
 
-    }
-    #about {
-      background: url('assets/img/about-bg.png') center/cover no-repeat;
-      color: white;
-    }
-    #about .img-fluid {
-      padding: 50px 50px;
-    }
-    #about p {
-      padding-right: 50px;
-      text-align: justify;
-    }
-    .marketing-section, .marketing-section-2 {
-      background: url('marketing-bg.jpg') center/cover no-repeat;
-      color: white;
-      padding: 5rem 2rem;
-      text-align: center;
-    }
-    .menu-item img {
-      width: 100px;
-      height: auto;
-    }
-    footer {
-      background: #222;
-      color: white;
-      padding: 2rem;
-    }
-    .social-icons a {
-      color: white;
-      margin-right: 10px;
-    }
-    #events .swiper-slide .card{
-  width: 300px;
+.hero-content {
+  padding: 40px 30px;
+  border-radius: 15px;
+  max-width: 600px;
+}
 
+.floating-image {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  max-height: 600px;
+  z-index: 1;
+}
+
+.hero-content .btn {
+  
+  border: 2px solid red;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .floating-image {
+    display: none;
+  }
+
+  .hero-content {
+    padding: 30px 20px;
+  }
+
+  .hero-section {
+    clip-path: none;
+  }
+}
+    .navbar-brand {
+      font-weight: bold;
     }
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: black;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .about-section {
+  /* background-color: #1f1f1f; */
+  min-height: 100vh;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-intro h2 {
+  color:red;
+  font-size: 2.5rem;
+  font-weight: bold;
+ 
+}
+
+.about-intro p {
+  color: black;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.circle-card {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* 1:1 aspect ratio */
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.circle-card .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.37);
+  color: white;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.circle-card:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.menu-section {
+  /* background-color: #f8f9fa; */
+  color: #000000;
+  padding: 100px 20px;
+}
+.menu-section h1{
+
+  color: red;
+}
+
+.category-thumb {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.category-thumb:hover {
+  transform: scale(1.05);
+}
+
+.category-thumb img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.category-thumb h6 {
+  color: black;
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.menu-card h3 {
+color:red;
+}
   </style>
 </head>
 <body>
+
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-bold bg-white">
-    <div class="container">
-		<a class="navbar-brand" href="#">
-			<img src="assets/img/cafe-logo.png" alt="Bkeefi Cafe Logo" style="width: 150px;">
-		  </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-          <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="#loyalty">Loyalty Program</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Language</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">English</a></li>
-              <li><a class="dropdown-item" href="#">العربية</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <h1>Coffee and Sports<br>Enthusiasts Destination</h1>
-          <p>bkeefi cafe ليس مجرد مقهى... بل أسلوب حياة شبابي وعائلي بطابع رياضي مثير ينبض بالحيوية.</p>
-          <a href="#menu" class="btn ">Explore Menu</a>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- About Us Section -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <h2>About Us</h2>
-          <p>bkeefi is more than just a café — it's a lifestyle. Designed for youth, families, athletes and sports lovers, bkeefi blends vibrant energy with community spirit. We bring together the love for great coffee, healthy dinning, sports, and meaningful social connections in one exciting, inclusive space. Whether you are supporting your favorite team, spending time with friends, enjoying a premium cup of coffee, or savoring healthy dining options, Bkeefi offers a space where you truly belong.</p>
-        </div>
-        <div class="col-md-6">
-          <img src="assets/img/about us.png" alt="About Bkeefi" class="img-fluid" >
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Marketing Section 1 -->
-  <section class="marketing-section">
-    <h2>انطلق في أجواء مليئة بالحيوية والرياضة!</h2>
-  </section>
-
-  <!-- Menu Section -->
-  <section id="menu" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Menu</h2>
-      <div class="row">
-        <div class="col-md-6 d-flex align-items-center mb-4">
-          <img src="assets/img/about us.png" class="me-3" alt="Coffee" style="width: 100px; border: #ff0000 solid 2px;border-radius: 50%;">
-          <div>
-            <h5>Espresso</h5>
-            <p>قهوة إسبريسو مركزة ومثالية لبداية يومك الرياضي.</p>
-          </div>
-        </div>
-        <div class="col-md-6 d-flex align-items-center mb-4">
-          <img src="cake.jpg" class="me-3" alt="Cake">
-          <div>
-            <h5>Protein Cake</h5>
-            <p>كعكة صحية غنية بالبروتين لمزيد من الطاقة والنشاط.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Marketing Section 2 -->
-  <section class="marketing-section-2">
-    <h2>لأنك تستحق الأفضل في كل رشفة وقطعة!</h2>
-  </section>
-  
-
- <!-- Gallery Section -->
-<section id="gallery" class="py-5 bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container">
-    <h2 class="text-center mb-5">Gallery</h2>
+    <a class="navbar-brand" href="#">
+      <img src="assets/img/cafe-logo.png" alt="Bkeefi Logo" height="100" class="d-inline-block align-text-top">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Loyalty Program</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+      </ul>
+      <button class="lang-btn" onclick="switchLang()">عربي</button>
+    </div>
+  </div>
+</nav>
 
-    <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-      <div class="carousel-inner">
+ <!-- Hero Section -->
+<section class="hero-section position-relative d-flex justify-content-center align-items-center text-white text-center">
+  <!-- Floating Image -->
+  <img src="assets/img/hero-img.png" alt="Bkeefi Animation" class="floating-image" data-aos="fade-left">
 
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <img src="assets/img/g-02.jpg" class="d-block w-100 rounded-3" alt="Gallery Image 1">
+  <!-- Centered Content -->
+  <div class="hero-content" data-aos="zoom-in">
+    <h1 class="mb-4">Coffee and Sports<br> Enthusiasts Destination</h1>
+    <p class="mb-4">Your ultimate destination for coffee and sports vibes. Enjoy, connect, and cheer!</p>
+    <a href="#menu" class="btn  btn-lg">Explore Our Menu</a>
+  </div>
+</section>
+
+<!-- About Us Section -->
+<section class="about-section d-flex align-items-center justify-content-center text-center text-white">
+  <div class="container">
+    <!-- Title and Paragraph -->
+    <div class="about-intro mb-5" data-aos="fade-up">
+      <h2 class="mb-3">About bkeefi cafe</h2>
+      <p class="lead">
+        bkeefi cafe is where coffee, community, and sports come together. A vibrant space for youth, families, and fans to connect and enjoy.
+      </p>
+    </div>
+
+    <!-- Circular Cards -->
+    <div class="row justify-content-center g-4" data-aos="fade-up" data-aos-delay="100">
+      <!-- Card 1 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="circle-card" style="background-image: url('assets/img/sports-bg.png');">
+          <div class="overlay">Specialty coffee, fresh bites, and healthy snacks</div>
         </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <img src="assets/img/g-05.jpg" class="d-block w-100 rounded-3" alt="Gallery Image 2">
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-          <img src="assets/img/g-02.jpg" class="d-block w-100 rounded-3" alt="Gallery Image 3">
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="carousel-item">
-          <img src="assets/img/g-05.jpg" class="d-block w-100 rounded-3" alt="Gallery Image 4">
-        </div>
-
       </div>
-
-      <!-- Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-
-      <!-- Indicators -->
-      <div class="carousel-indicators mt-3">
-        <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"></button>
-        <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="3"></button>
+      <!-- Card 2 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="circle-card" style="background-image: url('images/card2.jpg');">
+          <div class="overlay">Live sports screenings in a high-energy, fan-focused atmosphere</div>
+        </div>
       </div>
-
+      <!-- Card 3 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="circle-card" style="background-image: url('images/card3.jpg');">
+          <div class="overlay">Group hangouts, themed nights, and interactive activities</div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="circle-card" style="background-image: url('images/card4.jpg');">
+          <div class="overlay">Family-friendly and youth-oriented experiences</div>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="circle-card" style="background-image: url('images/card5.jpg');">
+          <div class="overlay">A space built around friendships, togetherness, sports, wellness, and a creative culture</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- What We Offer Section -->
-<section id="what-we-offer" class="py-5" style="background: url('assets/img/hero.png') no-repeat center center/cover; transition: background-image 0.5s ease;">
+<!-- Menu Section -->
+<section class="menu-section  text-center">
   <div class="container">
-    <div class="row align-items-center">
-      
-      <!-- List on the Left -->
-      <div class="col-md-5 mb-4">
-        <h2 class="mb-4 text-white">What We Offer</h2>
-        <ul class="list-group">
-          <li class="list-group-item list-group-item-action" onclick="showOffer('coffee')">
-            Specialty coffee, fresh bites, and healthy snacks
-          </li>
-          <li class="list-group-item list-group-item-action" onclick="showOffer('sports')">
-            Live sports screenings in a high-energy, fan-focused atmosphere
-          </li>
-          <li class="list-group-item list-group-item-action" onclick="showOffer('group')">
-            Group hangouts, themed nights, and interactive activities
-          </li>
-          <li class="list-group-item list-group-item-action" onclick="showOffer('family')">
-            Family-friendly and youth-oriented experiences
-          </li>
-          <li class="list-group-item list-group-item-action" onclick="showOffer('community')">
-            A space built around friendships, togetherness, sports, wellness, and a creative culture
-          </li>
-        </ul>
-      </div>
 
-      <!-- Text Content on the Right -->
-      <div class="col-md-7 text-white text-center">
-        <div id="offerDescription" class="fs-4">
-          Specialty coffee, fresh bites, and healthy snacks
-        </div>
-      </div>
-
+    <!-- Title and Paragraph -->
+    <div class="menu-intro mb-5" data-aos="fade-up">
+      <h1 class="mb-3">Our Menu</h1>
+      <p class="lead">Choose your favorite category to explore delicious items tailored for every taste!</p>
     </div>
-  </div>
-</section>
 
-
- <!-- Events Section (with Swiper) -->
-<section id="events" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-4">Events</h2>
-
-    <!-- Swiper Container -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-
-        <!-- Event 1 -->
-        <div class="swiper-slide">
-          <div class="card" >
-            <img src="assets/img/g-01.jpg" class="card-img-top" alt="Event 1">
-            <div class="card-body text-center">
-              <h5 class="card-title">Football Night</h5>
-              <p class="card-text">Join us on May 1st for an exciting football watch party!</p>
-              <a href="https://forms.gle/example1" class="btn btn-primary">Register Now</a>
-            </div>
-          </div>
+    <!-- Category Thumbnails -->
+    <div class="row justify-content-center g-4 mb-5" data-aos="fade-up" data-aos-delay="100">
+      <!-- Category 1 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="category-thumb" onclick="showCategory('coffee')">
+          <img src="assets/img/category/1.png" alt="Coffee">
+          <h6>Coffee</h6>
         </div>
-
-        <!-- Event 2 -->
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="assets/img/event2.jpg" class="card-img-top" alt="Event 2">
-            <div class="card-body text-center">
-              <h5 class="card-title">Yoga & Coffee</h5>
-              <p class="card-text">Relax with a morning yoga session and our healthy drinks – May 5th.</p>
-              <a href="https://forms.gle/example2" class="btn btn-primary">Register Now</a>
-            </div>
-          </div>
-        </div>
-
-          <!-- Event 3 -->
-          <div class="swiper-slide">
-            <div class="card">
-              <img src="assets/img/event2.jpg" class="card-img-top" alt="Event 3">
-              <div class="card-body text-center">
-                <h5 class="card-title">Yoga & Coffee</h5>
-                <p class="card-text">Relax with a morning yoga session and our healthy drinks – May 5th.</p>
-                <a href="https://forms.gle/example2" class="btn btn-primary">Register Now</a>
-              </div>
-            </div>
-          </div>
-
-            <!-- Event 4 -->
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="assets/img/event2.jpg" class="card-img-top" alt="Event 4">
-            <div class="card-body text-center">
-              <h5 class="card-title">Yoga & Coffee</h5>
-              <p class="card-text">Relax with a morning yoga session and our healthy drinks – May 5th.</p>
-              <a href="https://forms.gle/example2" class="btn btn-primary">Register Now</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- add more Events item-->
-
       </div>
+      <!-- Repeat for other categories -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="category-thumb" onclick="showCategory('cold')">
+          <img src="assets/img/category/2.png" alt="Cold Drinks">
+          <h6>Cold Drinks</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="category-thumb" onclick="showCategory('salad')">
+          <img src="assets/img/category/3.png" alt="Salad">
+          <h6>Salad</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="category-thumb" onclick="showCategory('sandwich')">
+          <img src="assets/img/category/4.png" alt="Sandwiches">
+          <h6>Sandwiches</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="category-thumb" onclick="showCategory('dessert')">
+          <img src="assets/img/category/5.png" alt="Dessert">
+          <h6>Dessert</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="category-thumb" onclick="showCategory('healthy')">
+          <img src="assets/img/category/6.png" alt="Healthy">
+          <h6>Healthy</h6>
+        </div>
+      </div>
+    </div>
 
-      <!-- Swiper Buttons -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-
-      <!-- Swiper Pagination -->
-      <div class="swiper-pagination mt-4"></div>
+    <!-- Dynamic Content Container -->
+    <div id="menuContent" data-aos="fade-up" data-aos-delay="200">
+      <!-- JavaScript will load selected category content here -->
     </div>
 
   </div>
 </section>
 
-  <!-- Location Section -->
-  <section id="location" class="py-5 bg-light">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <iframe src="https://maps.google.com/maps?q=Amman%20Jordan&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" frameborder="0" allowfullscreen=""></iframe>
-        </div>
-        <div class="col-md-6">
-          <h4>Visit Us</h4>
-          <p>نحن في قلب عمّان، زورونا لتجربة لا تنسى.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="mt-5">
-    <div class="container text-center">
-      <img src="assets/img/cafe-logo.png" alt="Bkeefi Logo" style="width: 100px;">
-      <p>Amman, Jordan</p>
-      <div class="social-icons">
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="#"><i class="bi bi-tiktok"></i></a>
-        <a href="#"><i class="bi bi-snapchat"></i></a>
-      </div>
-      <p>Email: info@bkeefi.com | Phone: +962-1234-5678</p>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 2,       // عرض 2 مع بعض
-    spaceBetween: 5,        // المسافة بينهم
-    loop: true,              // تكرار تلقائي
-    autoplay: {
-  delay: 3000,
-  disableOnInteraction: false,
-},
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      0: { slidesPerView: 1 },         // موبايل يعرض واحد فقط
-      768: { slidesPerView: 2 },       // تابلت وفوق يعرض 2
-    }
-  });
-</script>
-
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    function showOffer(type) {
-      let section = document.getElementById('what-we-offer');
-      let description = document.getElementById('offerDescription');
-  
-      if (type === 'coffee') {
-        section.style.backgroundImage = "url('assets/img/coffee-bg.png')";
-        description.innerText = 'Specialty coffee, fresh bites, and healthy snacks';
-      } else if (type === 'sports') {
-        section.style.backgroundImage = "url('assets/img/sports-bg.png')";
-        description.innerText = 'Live sports screenings in a high-energy, fan-focused atmosphere';
-      } else if (type === 'group') {
-        section.style.backgroundImage = "url('assets/img/coffee-bg.png')";
-        description.innerText = 'Group hangouts, themed nights, and interactive activities';
-      } else if (type === 'family') {
-        section.style.backgroundImage = "url('assets/img/sports-bg.png')"
-        description.innerText = 'Family-friendly and youth-oriented experiences';
-      } else if (type === 'community') {
-        section.style.backgroundImage = "url('assets/img/coffee-bg.png')";
-        description.innerText = 'A space built around friendships, togetherness, sports, wellness, and a creative culture.';
-      }
+    AOS.init();
+
+    function switchLang() {
+      window.location.href = "index-ar.html"; // redirect to Arabic version
     }
   </script>
+  <script>
+    const menuData = {
+      coffee: {
+        title: "Coffee",
+        items: [
+          { name: "Espresso", price: "$2.50" },
+          { name: "Cappuccino", price: "$3.00" },
+          { name: "Latte", price: "$3.50" }
+        ]
+      },
+      cold: {
+        title: "Cold Drinks",
+        items: [
+          { name: "Cold Brew", price: "$3.00" },
+          { name: "Iced Americano", price: "$2.80" },
+          { name: "Lemon Mint", price: "$3.20" }
+        ]
+      },
+      salad: {
+        title: "Salads",
+        items: [
+          { name: "Caesar Salad", price: "$4.50" },
+          { name: "Greek Salad", price: "$4.00" },
+          { name: "Quinoa Bowl", price: "$5.00" }
+        ]
+      },
+      sandwich: {
+        title: "Sandwiches",
+        items: [
+          { name: "Chicken Avocado", price: "$5.50" },
+          { name: "Tuna Melt", price: "$5.00" },
+          { name: "Grilled Veggie", price: "$4.80" }
+        ]
+      },
+      dessert: {
+        title: "Dessert",
+        items: [
+          { name: "Chocolate Cake", price: "$3.00" },
+          { name: "Cheesecake", price: "$3.50" },
+          { name: "Cookies", price: "$2.00" }
+        ]
+      },
+      healthy: {
+        title: "Healthy Food & Dessert",
+        items: [
+          { name: "Energy Balls", price: "$2.50" },
+          { name: "Granola Cup", price: "$3.20" },
+          { name: "Fruit Mix", price: "$2.80" }
+        ]
+      }
+    };
+  
+    function showCategory(categoryKey) {
+      const data = menuData[categoryKey];
+      const container = document.getElementById('menuContent');
+  
+      let html = `
+        <div class="menu-card bg-white p-4 rounded shadow-sm">
+          <h3 class="mb-4">${data.title}</h3>
+          <ul class="menu-list text-start">
+            ${data.items.map(item => `
+              <li class="d-flex justify-content-between border-bottom py-2">
+                <span>${item.name}</span><span>${item.price}</span>
+              </li>`).join('')}
+          </ul>
+        </div>
+      `;
+  
+      container.innerHTML = html;
+    }
+  </script>
+
 </body>
 </html>
